@@ -1,20 +1,19 @@
 // Функції для роботи з бекендом
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://dummyjson.com/products/';
+axios.defaults.baseURL = 'https://dummyjson.com/products';
 export async function getProductsCategories() {
-  const END_POINT = 'category-list';
+  const END_POINT = '/category-list';
   const url = `${END_POINT}`;
 
   const resp = await axios.get(url);
   return resp.data;
 }
 
-async function getProducts(page = 1) {
-    const skip = (page - 1) * 12;
-    const url = `?limit=12&skip=${skip}`;
+export async function getProducts(page = 1) {
+  const skip = (page - 1) * 12;
+  const url = `?limit=12&skip=${skip}`;
 
-    
-        const response = await axios.get(url);
-        return response.data.products;
+  const response = await axios.get(url);
+  return response.data.products;
 }
