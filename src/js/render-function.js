@@ -20,4 +20,18 @@ export function renderProductsList(products) {
     )
     .join('');
   refs.productsList.insertAdjacentHTML('beforeend', markup);
+};
+
+export function renderCategoriesList(categories) {
+  categories.unshift('all');
+  const markup = categories
+    .map(
+      category =>
+        `<li class="categories__item">
+        <button class="categories__btn" type="button">${category}</button>
+      </li>`
+    )
+    .join('');
+
+  refs.categoriesList.innerHTML = markup;
 }
