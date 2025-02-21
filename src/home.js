@@ -1,4 +1,5 @@
-import { getProductCategories } from './js/products-api';
-
 //Логіка сторінки Home
-getProductCategories();
+
+import { onDOMContentLoaded } from './js/handlers';
+
+document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
